@@ -8,6 +8,7 @@
  *  - Établi une connection bluetooth
  */
 
+#include "capteur.h"
 #include "bluetooth.h"
 #include "debug.h"
 
@@ -15,12 +16,12 @@
 
 void setup() {
   Serial.begin(9600);
-  initBluetooth();
+  Bluetooth.begin(9600);
 }
 
 void loop() {
-  if(Serial.available())
-    Bluetooth.print(Serial.read());
-  if(Bluetooth.available())
-    Serial.print(Bluetooth.read());
+  if(Serial.available)
+    Bluetooth.print(Serial.read);
+  if(Bluetooth.available)
+    Serial.print(Bluetooth.read);
 }
