@@ -1,6 +1,6 @@
 /* Programme principal de l'arduino dans X-STARS-BALL
  * --------------------------------------------------
- * V 1.1
+ * V 1
  * 21-04-2024
  * Par Cloé et Luc
  * --------------------------------------------------
@@ -9,7 +9,6 @@
  */
 
 #include "bluetooth.h"
-#include "debug.h"
 
 //--------- Variables
 

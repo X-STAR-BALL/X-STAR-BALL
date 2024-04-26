@@ -1,27 +1,40 @@
 /* Programme principal de l'arduino dans X-STARS-BALL
  * --------------------------------------------------
- * V 1.1
+ * V 1
  * 21-04-2024
  * Par Cloé et Luc
  * --------------------------------------------------
  * V 1 - TERMINÉE
  *  - Établi une connection bluetooth
+ * --------------------------------------------------
+ * V 2 - En cours
+ *  - 
  */
 
-#include "capteur.h"
+
 #include "bluetooth.h"
 #include "debug.h"
+#include "capteur.h"
 
 //--------- Variables
 
 void setup() {
   Serial.begin(9600);
-  Bluetooth.begin(9600);
+  initBluetooth();
 }
 
 void loop() {
-  if(Serial.available)
-    Bluetooth.print(Serial.read);
-  if(Bluetooth.available)
-    Serial.print(Bluetooth.read);
+  capteursAZero();
+  mesureCF();
+  Bluetooth.print(getCooX());
+  Bluetooth.print('/');
+  Bluetooth.print(getCooY());
+  Bluetooth.print('//');
+  
+  if(DEBUGBLUETOOTH == true){
+    Serial.print(getCooX());
+    Serial.print('/');
+    Serial.print(getCooY());
+    Serial.print('//');
+}
 }
