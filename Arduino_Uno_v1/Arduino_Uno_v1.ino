@@ -19,7 +19,7 @@ void setup() {
 
 void loop() {
   if(Serial.available())
-    Bluetooth.print(Serial.read());
+    Bluetooth.write(Serial.read());
   if(Bluetooth.available())
-    Serial.print(Bluetooth.read());
+    Serial.write(Bluetooth.read());
 }

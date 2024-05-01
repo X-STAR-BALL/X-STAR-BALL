@@ -13,14 +13,13 @@
 
 
 #include "bluetooth.h"
-#include "debug.h"
-#include "capteur.h"
 
 //--------- Variables
 
 void setup() {
   Serial.begin(9600);
   initBluetooth();
+  debug("Init finie");
 }
 
 void loop() {
@@ -31,10 +30,11 @@ void loop() {
   Bluetooth.print(getCooY());
   Bluetooth.print('//');
   
-  if(DEBUGBLUETOOTH == true){
+  if(DEBUGBLUETOOTH){
     Serial.print(getCooX());
     Serial.print('/');
     Serial.print(getCooY());
-    Serial.print('//');
-}
+    Serial.print("\n");
+  }
+  delay(2000);
 }
