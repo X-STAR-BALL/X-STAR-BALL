@@ -5,10 +5,13 @@
  * Par Cloé et Luc
  * --------------------------------------------------
  * V 1 - TERMINÉE
- *  - Établi une connection bluetooth
+ *  - Établie une connection bluetooth
  * --------------------------------------------------
- * V 2 - En cours
- *  - 
+ * V 2 - TERMINÉE
+ *  - Calcule les coordonnées à l'aide de la formule déduite par Luc
+ * --------------------------------------------------
+ * V 3 - En cours
+ *  - Calcule les coordonnées à l'aide d'un algorithme plus complexe
  */
 
 
@@ -29,5 +32,6 @@ void loop() {
     getCoo();
     String message = String(cooX) + "/" + String(cooY);
     debugBluetooth("message = " + message); 
+    Bluetooth.print(message);
   }
 }
