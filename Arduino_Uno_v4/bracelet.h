@@ -14,10 +14,10 @@ float vit;                //Vitesse en m/s
 bool lance = false;
 
 void initBracelet(){
-  Bluetooth.begin(9600);
+  Bracelet.begin(9600);
   pinMode(2, INPUT);
   pinMode(3, OUTPUT);
-  debugBluetooth("Liaison bracelet configuré");
+  debugBracelet("Liaison bracelet configuré");
 }
 
 void checkTimer(){
