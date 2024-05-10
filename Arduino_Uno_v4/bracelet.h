@@ -14,10 +14,12 @@ float vit;                //Vitesse en m/s
 bool lance = false;
 
 void initBracelet(){
+  if(BRACELET){
   Bracelet.begin(9600);
   pinMode(2, INPUT);
   pinMode(3, OUTPUT);
   debugBracelet("Liaison bracelet configuré");
+  }
 }
 
 void checkTimer(){
@@ -27,7 +29,7 @@ void checkTimer(){
       timer = millis();
       if(lance){
         Bluetooth.print("r");
-        debugBluetooth("r");
+        debugBracelet("r");
       }
       else{
         lance = true;
@@ -37,7 +39,13 @@ void checkTimer(){
   else{
     if(Serial.read()){
       timer = millis();
-      lance = true;
+      if(lance){
+        Bluetooth.print("r");
+        debugBracelet("r");
+      }
+      else{
+        lance = true;
+      }
     }
   }
 }
