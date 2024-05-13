@@ -2,14 +2,14 @@
  * Programme aspect BRACELET
  **************************************************/
 
-#define BRACELET   false      //Si on utilise le bracelet : true / Si on utilise la liaison au PC : false
+#define BRACELET   true      //Si on utilise le bracelet : true / Si on utilise la liaison au PC : false
 
-SoftwareSerial Bracelet(2,3);   //Port D2
+SoftwareSerial Bracelet(3,4);   //Port D2
 
 //--------- Variables
 uint32_t timer = 0;
-int duree;                //Durée en millisecondes
-int distance = 5;         //Distance en mètres
+float duree;                //Durée en millisecondes
+float distance = 5;         //Distance en mètres
 float vit;                //Vitesse en m/s
 bool lance = false;
 
@@ -25,7 +25,7 @@ void initBracelet(){
 void checkTimer(){
   
   if(BRACELET){
-    if(Bracelet.read()){
+    if(Bracelet.read()==1){
       timer = millis();
       if(lance){
         Bluetooth.print("r");
@@ -52,8 +52,13 @@ void checkTimer(){
   }
 }
 
-void calculVit(){
+void calculVit()
+{
+
   duree = millis() - timer;
-  vit = distance / (duree/100);
+
+  debugBracelet(String(duree) + "\n");
+  vit = distance / (duree/1000);
+  debugBracelet(String(vit)+"\n"+String(distance)+"\n");
   lance = false;
 }

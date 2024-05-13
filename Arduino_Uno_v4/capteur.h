@@ -122,8 +122,8 @@ void maxCap(){
 void getCoo() {
   TargetTracker tracker;
       int hit_position = tracker.calculate_hit_position(CF1.maxi, CF2.maxi, CF3.maxi, CF4.maxi);
-      int cooX = hit_position & 0xFF; // Extract x
-      int cooY = hit_position >> 8; // Extract y
+      cooX = hit_position & 0xFF; // Extract x
+      cooY = hit_position >> 8; // Extract y
       debugCap("Coordonnées optimales (x, y) où la balle a touché la cible : (" +
                String(cooX) + ", " + String(cooY)+") \n");
 }

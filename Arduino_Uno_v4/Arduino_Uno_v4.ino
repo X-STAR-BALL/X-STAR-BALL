@@ -32,7 +32,7 @@ void loop() {
   capteursAZero();
   maxCap();
   checkTimer();
-  if((CF1.maxi !=0)||(CF2.maxi !=0)||(CF3.maxi !=0)||(CF4.maxi !=0)){
+  if((CF1.maxi > 2)||(CF2.maxi >2)||(CF3.maxi >2)||(CF4.maxi >2)){
     getCoo();
     calculVit();
     String message = String(cooX) + "/" + String(cooY) + "/" + String(vit);

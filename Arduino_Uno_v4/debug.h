@@ -4,8 +4,8 @@
 
 
 #define DEBUG             true              //Debug général
-#define DEBUGBLUETOOTH    false              //Debug bluetooth
-#define DEBUGCAP          false              //Debug capteur
+#define DEBUGBLUETOOTH    true              //Debug bluetooth
+#define DEBUGCAP          true              //Debug capteur
 #define DEBUGBRACELET     true              //Debug capteur
 
 void debug(String str){
