@@ -15,6 +15,7 @@
 void setup() {
   Serial.begin(9600);
   initBluetooth();
+  Serial.print("F");
 }
 
 void loop() {

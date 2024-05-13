@@ -9,7 +9,7 @@
 #include <SoftwareSerial.h>
 
 
-SoftwareSerial Bluetooth(4,5);   //Port D4 ?
+SoftwareSerial Bluetooth(4,5);   //Port D4
 
 void initBluetooth(){
   Bluetooth.begin(9600);

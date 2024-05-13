@@ -2,7 +2,7 @@
  * Programme aspect BRACELET
  **************************************************/
 
-#define BRACELET   true      //Si on utilise le bracelet : true / Si on utilise la liaison au PC : false
+#define BRACELET   false      //Si on utilise le bracelet : true / Si on utilise la liaison au PC : false
 
 SoftwareSerial Bracelet(2,3);   //Port D2
 
@@ -37,7 +37,9 @@ void checkTimer(){
     }
   }
   else{
-    if(Serial.read()){
+    String mes = String(Serial.read());
+    //debugBracelet(mes);
+    if(mes=="49"){
       timer = millis();
       if(lance){
         Bluetooth.print("r");
